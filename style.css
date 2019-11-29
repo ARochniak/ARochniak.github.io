@@ -23,17 +23,17 @@ main {
 	background-color: #f8f6f9;
 }
 .works {
-	display: flex;
-	justify-content: space-between;
-}
-.works figure {
-	margin: 0;
-	text-align: center;
-	font-size: 1.5em;
-	color: #004d6b;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 .works img {
 	width: 100%;
+}
+.works figcaption {
+	text-align: center;
+	font-size: 1.5em;
+	color: #004d6b;
 }
 footer {
 	padding: 2%;
