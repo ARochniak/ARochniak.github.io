@@ -1,46 +1,17 @@
-const projects = [
-  {
-    title: "asteroids_game",
-    imageSrc: "images/asteroids.webp",
-    href: "https://arochniak.github.io/AsteroidsGame/"
-  },
-  {
-    title: "calculator",
-    imageSrc: "images/calculator.webp",
-    href: "https://arochniak.github.io/React-Calculator/"
-  },
-  {
-    title: "weather app",
-    imageSrc: "images/weatherApp.webp",
-    href: "https://arochniak.github.io/weatherapp/"
-  },
-  {
-    title: "notes",
-    imageSrc: "images/ARNotes.webp",
-    href: "https://arochniak.github.io/ARNotes/"
-  },
-  {
-    title: "simple store",
-    imageSrc: "images/simpleStore.webp",
-    href: "https://arochniak.github.io/simpleStore/"
-  },
-  {
-    title: "orders manager",
-    imageSrc: "images/orders.webp",
-    href: "https://arochniak.github.io/orders_products/"
-  }
-];
+// Add project exaples to DOM
 
-const works = document.createElement("div");
-works.classList.add("works");
+const works = document.createElement('div');
+works.classList.add('works');
 
 projects.forEach(project => {
-  const figure = document.createElement("figure");
-  const a = document.createElement("a");
-  const img = document.createElement("img");
-  const figcaption = document.createElement("figcaption");
+  const figure = document.createElement('figure');
+  const a = document.createElement('a');
+  const img = document.createElement('img');
+  const figcaption = document.createElement('figcaption');
   a.href = project.href;
-  img.src = project.imageSrc;
+  // on lazyImage for every img
+  img.src = projects[0].imageSrc;
+  img.setAttribute('data-src', project.imageSrc);
   img.alt = project.title;
   a.append(img);
   figure.append(a);
@@ -49,4 +20,36 @@ projects.forEach(project => {
   works.append(figure);
 });
 
-document.getElementsByTagName("main")[0].append(works);
+document.querySelector('main').append(works);
+
+// Add dessapear of scroll wown effect 
+
+const displayHeight = document.documentElement.clientHeight;
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries[0].target.style.opacity = entries[0].isIntersecting ? '1': '0';
+  },
+  {
+    rootMargin: `-${displayHeight / 2}px 0px 0px 0px`
+  }
+);
+observer.observe(document.querySelector('.scroll'));
+
+// Add lazy download of images
+const imageObserver = new IntersectionObserver( (entries, imgObs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const lazyImage = entry.target;
+      lazyImage.src = lazyImage.dataset.src;
+      imgObs.unobserve(lazyImage);
+    }
+  });
+  },
+  {
+    rootMargin: "0px 0px 100px 0px"
+  }
+);
+document.querySelectorAll('img').forEach( img => {
+  imageObserver.observe(img);
+})
