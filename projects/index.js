@@ -5,6 +5,11 @@ const projects = [
     href: 'https://arochniak.github.io/React-Calculator/'
   },
   {
+    title: 'asteroids',
+    imageSrc: 'images/asteroids.webp',
+    href: 'https://arochniak.github.io/AsteroidsGame/'
+  },
+  {
     title: 'orders manager',
     imageSrc: 'images/orders.webp',
     href: 'https://arochniak.github.io/orders_products/'
@@ -13,11 +18,6 @@ const projects = [
     title: 'weather app',
     imageSrc: 'images/weatherApp.webp',
     href: 'https://arochniak.github.io/weatherapp/'
-  },
-  {
-    title: 'asteroids',
-    imageSrc: 'images/asteroids.webp',
-    href: 'https://arochniak.github.io/AsteroidsGame/'
   },
   {
     title: 'notes',
