@@ -7,7 +7,8 @@ body {
 }
 header {
 	position: relative;
-	height: 100vh;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -86,11 +87,22 @@ footer a {
 }
 /* Adaptive */
 @media (max-width: 520px) {
-	h1 {
-		font-size: 1em;
+	h1 span {
+		font-size: 1.5em;
+	}
+	h2 {
+		font-size: 1.1em;
 	}
 	.works {
 		display: block;
+	}
+}
+@media (orientation: portrait) {
+	h1, h2 {
+		font-size: 3em;
+	}
+	.works figcaption {
+		font-size: 2.5em;
 	}
 }
 
@@ -100,7 +112,7 @@ footer a {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	opacity: 0;
+	opacity: 1;
 	transition: opacity 0.3s linear;
 }
 
@@ -144,8 +156,4 @@ footer a {
 		transform: rotate(-45deg) translate(-20px, 20px);
 		opacity: 0;
 	}
-}
-/* Scroll down dissapear */
-.visible {
-	opacity: 1;
 }
