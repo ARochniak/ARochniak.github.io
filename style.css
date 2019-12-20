@@ -7,8 +7,8 @@ body {
 }
 header {
 	position: relative;
-  height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -64,17 +64,17 @@ main::before, main::after {
 	content: "";
 	position: absolute;
 	top: 0;
-	left: -25px;
-	width: 100px;
-	height: 30px;
-	transform-origin: 50% 50%;
+	left: -4vw;
+	width: 16vw;
+	height: 4vw;
 	transform: rotate(-35deg);
+	transform-origin: 50% 50%;
 	background: rgba(255, 255, 200, 0.6);
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
 }
 main::after {
 	left: auto;
-	right: -25px;
+	right: -4vw;
 	transform: rotate(45deg);
 }
 footer {
@@ -97,12 +97,31 @@ footer a {
 		display: block;
 	}
 }
+@media (min-width: 800px) {
+	main::before, main::after {
+		left: -30px;
+		width: 120px;
+		height: 30px;
+	}
+	main::after {
+		left: auto;
+		right: -30px;
+	}
+}
+@media (orientation: landscape) {
+	header {
+		align-items: flex-start;
+	}
+}	
 @media (orientation: portrait) {
 	h1, h2 {
-		font-size: 3em;
+		font-size: 1.2em;
 	}
 	.works figcaption {
-		font-size: 2.5em;
+		font-size: 1em;
+	}
+	header {
+
 	}
 }
 
@@ -112,18 +131,18 @@ footer a {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 	opacity: 1;
 	transition: opacity 0.3s linear;
 }
 
 .scroll div {
 	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	transform: translate(-50%, 0);
+	bottom: 0;
+	margin-bottom: 3vh;
 	padding-top: 70px;
 	color: #f6f1ee;
-	font-size: 20px;
 	font-family: sans-serif;
 	letter-spacing: 0.05em;
 	transition: opacity 0.3s;
