@@ -7,8 +7,8 @@ body {
 }
 header {
 	position: relative;
-  height: calc(var(--vh, 1vh) * 100);
-  min-height: -webkit-fill-available;
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: -webkit-fill-available;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,7 +60,8 @@ main {
 	color: #004d6b;
 }
 /* Scotch tape decoration */
-main::before, main::after {
+main::before,
+main::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -98,7 +99,8 @@ footer a {
 	}
 }
 @media (min-width: 800px) {
-	main::before, main::after {
+	main::before,
+	main::after {
 		left: -30px;
 		width: 120px;
 		height: 30px;
@@ -108,20 +110,20 @@ footer a {
 		right: -30px;
 	}
 }
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 767px) {
 	header {
 		align-items: flex-start;
 	}
-}	
+}
 @media (orientation: portrait) {
-	h1, h2 {
+	h1,
+	h2 {
 		font-size: 1.2em;
 	}
 	.works figcaption {
 		font-size: 1em;
 	}
 	header {
-
 	}
 }
 
