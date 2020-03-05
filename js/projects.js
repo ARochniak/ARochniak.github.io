@@ -1,5 +1,15 @@
 const projects = [
   {
+    title: 'ARnews',
+    imageSrc: 'images/arnews',
+    href: 'https://arochniak.github.io/ARnews/'
+  },
+  {
+    title: 'courses manager',
+    imageSrc: 'images/courses_manager',
+    href: 'https://arochniak.github.io/courses_manager'
+  },
+  {
     title: 'calculator',
     imageSrc: 'images/calculator',
     href: 'https://arochniak.github.io/React-Calculator/'

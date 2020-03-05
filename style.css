@@ -2,8 +2,8 @@
 
 body {
 	margin: 0;
-	padding: 0 10%;
-	background-color: #007aa9;
+	padding: 0 10vw 5vw;
+	background: linear-gradient(to right, #2193AE, #007AAF);;
 }
 header {
 	position: relative;
@@ -49,6 +49,7 @@ main {
 }
 .works figure {
 	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
 }
 .works img {
 	width: 100%;
@@ -123,7 +124,8 @@ footer a {
 	.works figcaption {
 		font-size: 1em;
 	}
-	header {
+	footer {
+		font-size: 0.8em;
 	}
 }
 
