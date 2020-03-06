@@ -26,13 +26,13 @@ header::before {
   z-index: -1;
 
   width: 60vw;
-  height: 60vh;
   max-width: 60vh;
+  height: 60vh;
   max-height: 60vw;
 
   background: linear-gradient(to left, #2193ae, #007aaf);
-  transform: translate(-50%, -50%) rotateZ(40deg);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  transform: translate(-50%, -50%) rotateZ(40deg);
 
 
   content: "";
@@ -144,6 +144,7 @@ main {
   padding: 2%;
 
   background-color: #f8f6f9;
+  box-shadow: 0 0 8px #707070;
 }
 
 .works {
