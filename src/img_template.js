@@ -1,6 +1,5 @@
-const imgTemplate = options => {
-  const {href, imageSrc, title} = options;
-  const lazyImg = projects[0].imageSrc;
+const imgTemplate = (options, lazyImg) => {
+  const { href, imageSrc, title } = options;
   return `
     <figure>
       <a href="${href}">
@@ -13,5 +12,7 @@ const imgTemplate = options => {
         ${title}
       </figcaption>
     </figure>
-  `
-}
+  `;
+};
+
+export default imgTemplate;

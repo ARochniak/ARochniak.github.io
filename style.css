@@ -1,182 +1,236 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 
 body {
-	margin: 0;
-	padding: 0 10vw 5vw;
-	background: linear-gradient(to right, #2193AE, #007AAF);;
-}
-header {
-	position: relative;
-	height: calc(var(--vh, 1vh) * 100);
-	min-height: -webkit-fill-available;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-h1,
-h2 {
-	color: #f6f1ee;
-	text-align: center;
-}
-h1 {
-	position: relative;
-	margin: 0;
-	font-family: "Indie Flower", cursive;
-}
-h1 span {
-	display: block;
-	font-size: 2em;
-	font-style: italic;
-}
-h1::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 25%;
-	width: 50%;
-	border-bottom: thick dotted;
+  margin: 0;
+  padding: 0 10vw 5vw;
+
+  background: linear-gradient(to right, #2193ae, #007aaf);
 }
 
-main {
-	position: relative;
-	padding: 2%;
-	background-color: #f8f6f9;
+header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	/*noinspection CssUnresolvedCustomProperty*/
+	height: calc(var(--vh, 1vh) * 100);
+	/*noinspection CssInvalidPropertyValue*/
+	min-height: -webkit-fill-available;
 }
-.works {
-	display: grid;
-	grid-gap: 5px;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+h1,
+h2 {
+  color: #f6f1ee;
+  text-align: center;
 }
-.works figure {
-	text-align: center;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+
+h1 {
+  position: relative;
+
+  margin: 0;
+
+  font-family: "Indie Flower", cursive;
 }
-.works img {
-	width: 100%;
-	max-width: 450px;
+
+h1 span {
+  display: block;
+
+  font-size: 2em;
+  font-style: italic;
 }
-.works figcaption {
-	text-align: center;
-	font-size: 1.5em;
-	color: #004d6b;
-}
-/* Scotch tape decoration */
-main::before,
-main::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -4vw;
-	width: 16vw;
-	height: 4vw;
-	transform: rotate(-35deg);
-	transform-origin: 50% 50%;
-	background: rgba(255, 255, 200, 0.6);
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-}
-main::after {
-	left: auto;
-	right: -4vw;
-	transform: rotate(45deg);
-}
-footer {
-	padding: 2%;
-	text-align: center;
-	background-color: white;
-}
-footer a {
-	padding: 10px;
-}
-/* Adaptive */
-@media (max-width: 520px) {
-	h1 span {
-		font-size: 1.5em;
-	}
-	h2 {
-		font-size: 1.1em;
-	}
-	.works {
-		display: block;
-	}
-}
-@media (min-width: 800px) {
-	main::before,
-	main::after {
-		left: -30px;
-		width: 120px;
-		height: 30px;
-	}
-	main::after {
-		left: auto;
-		right: -30px;
-	}
-}
-@media (orientation: landscape) and (max-width: 767px) {
-	header {
-		align-items: flex-start;
-	}
-}
-@media (orientation: portrait) {
-	h1,
-	h2 {
-		font-size: 1.2em;
-	}
-	.works figcaption {
-		font-size: 1em;
-	}
-	footer {
-		font-size: 0.8em;
-	}
+
+h1::after {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+
+  width: 50%;
+
+  border-bottom: thick dotted;
+
+  content: "";
 }
 
 /* Scroll down effect */
 
 .scroll {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	opacity: 1;
-	transition: opacity 0.3s linear;
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  opacity: 1;
+
+  transition: opacity 0.3s linear;
 }
 
 .scroll div {
-	position: absolute;
-	bottom: 0;
-	margin-bottom: 3vh;
-	padding-top: 70px;
-	color: #f6f1ee;
-	font-family: sans-serif;
-	letter-spacing: 0.05em;
-	transition: opacity 0.3s;
+  position: absolute;
+  bottom: 0;
+
+  margin-bottom: 3vh;
+  padding-top: 70px;
+
+  color: #f6f1ee;
+  font-family: sans-serif;
+  letter-spacing: 0.05em;
+
+  transition: opacity 0.3s;
 }
+
 .scroll div span {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 24px;
-	height: 24px;
-	margin-left: -12px;
-	border-left: 1px solid #f6f1ee;
-	border-bottom: 1px solid #f6f1ee;
-	transform: rotate(-45deg);
-	animation: fall 1.5s infinite;
-	box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+
+  border-bottom: 1px solid #f6f1ee;
+  border-left: 1px solid #f6f1ee;
+  transform: rotate(-45deg);
+
+  animation: fall 1.5s infinite;
 }
+
 .scroll div:hover {
-	cursor: default;
+  cursor: default;
 }
+
 @keyframes fall {
-	0% {
-		transform: rotate(-45deg) translate(0, 0);
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		transform: rotate(-45deg) translate(-20px, 20px);
-		opacity: 0;
-	}
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+main {
+  position: relative;
+
+  padding: 2%;
+
+  background-color: #f8f6f9;
+}
+
+.works {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.works figure {
+  text-align: center;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+}
+
+.works img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.works figcaption {
+  color: #004d6b;
+  font-size: 1.5em;
+  text-align: center;
+}
+/* Scotch tape decoration */
+main::before,
+main::after {
+  position: absolute;
+  top: 0;
+  left: -4vw;
+
+  width: 16vw;
+  height: 4vw;
+
+  background: rgba(255, 255, 200, 0.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transform: rotate(-35deg);
+  transform-origin: 50% 50%;
+
+  content: "";
+}
+
+main::after {
+  right: -4vw;
+  left: auto;
+
+  transform: rotate(45deg);
+}
+
+footer {
+  padding: 2%;
+
+  text-align: center;
+
+  background-color: white;
+}
+
+footer a {
+  padding: 10px;
+}
+/* Adaptive */
+@media (max-width: 520px) {
+  h1 span {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  .works {
+    display: block;
+  }
+}
+
+@media (min-width: 800px) {
+  main::before,
+  main::after {
+    left: -30px;
+
+    width: 120px;
+    height: 30px;
+  }
+
+  main::after {
+    right: -30px;
+    left: auto;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+  header {
+    align-items: flex-start;
+  }
+}
+
+@media (orientation: portrait) {
+  h1,
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .works figcaption {
+    font-size: 1em;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
 }

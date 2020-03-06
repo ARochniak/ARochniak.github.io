@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+
+.idea
+*.sublime*
+.vscode
+
+*.log*
+node_modules/
+
+/*.json
+webpack.config.js
+babel.config.js
+
+src/

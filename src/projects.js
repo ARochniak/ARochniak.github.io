@@ -40,3 +40,5 @@ const projects = [
     href: 'https://arochniak.github.io/simpleStore/'
   }
 ];
+
+export default projects;
