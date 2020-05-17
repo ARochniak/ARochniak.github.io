@@ -5,6 +5,11 @@ const projects = [
     href: 'https://arochniak.github.io/ARnews/'
   },
   {
+    title: 'Light-paint',
+    imageSrc: 'images/light_paint',
+    href: 'https://arochniak.github.io/light-paint/'
+  },
+  {
     title: 'courses manager',
     imageSrc: 'images/courses_manager',
     href: 'https://arochniak.github.io/courses_manager'
